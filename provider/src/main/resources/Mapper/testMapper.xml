@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.sawcao.demo.dao.testDao">
+
+
+    <select id="getNameById" resultType="com.sawcao.demo.model.testModel">
+		SELECT * FROM test WHERE ID = #{id}
+	</select>
+
+	<select id="deleteById">
+		DELETE FROM test WHERE ID = #{s}
+	</select>
+
+	<select id="insert" parameterType="com.sawcao.demo.model.testModel" resultType="com.sawcao.demo.model.testModel">
+		INSERT INTO test (ID,NAME1) VALUES(#{id, jdbcType=VARCHAR}, #{name1, jdbcType=VARCHAR})
+	</select>
+
+</mapper>
